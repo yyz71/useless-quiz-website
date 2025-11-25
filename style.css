@@ -1,76 +1,130 @@
+/* --- 基礎排版與字型 --- */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    /* 使用米白或淺灰色作為背景，模擬紙張質感 */
+    background-color: #f5f3ef; 
+    font-family: 'Arial Black', 'Heiti TC', sans-serif; /* 模擬粗黑體 */
+    color: #1a1a1a;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 20px;
 }
 
 #quiz-container {
-    background-color: #fff;
+    /* 使用乾淨的米白色/淺灰色，模擬參考圖中的卡片背景 */
+    background-color: #fcfcf9; 
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    border-radius: 15px; 
+    /* 輕微的陰影，讓卡片浮出 */
+    box-shadow: 8px 8px 0px rgba(26, 26, 26, 0.15); 
+    max-width: 650px; 
     width: 90%;
     text-align: center;
+    border: 3px solid #1a1a1a; /* 增加邊框來模擬卡片效果 */
 }
 
+/* --- 標題與文字 --- */
 h1 {
-    color: #c0392b; /* 醒目的紅色 */
-    margin-bottom: 30px;
-    font-size: 1.8em;
+    color: #444; 
+    font-size: 2.2em;
+    font-weight: 900; /* 極粗 */
+    line-height: 1.2;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
 }
 
 #question {
-    font-size: 1.2em;
-    margin-bottom: 25px;
-    font-weight: bold;
-}
-
-.option-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    margin: 8px 0;
-    width: 100%;
-    text-align: left;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.option-button:hover {
-    background-color: #2980b9;
-}
-
-#result-container {
-    margin-top: 30px;
-    padding: 20px;
-    border: 2px solid #27ae60; /* 綠色邊框強調「結果」 */
-    border-radius: 8px;
-    background-color: #ecf0f1;
-}
-
-#result-container h2 {
-    color: #27ae60;
-}
-
-#result-text {
     font-size: 1.3em;
-    font-weight: bold;
-    color: #333;
-    margin: 15px 0;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 15px;
+    margin-bottom: 30px;
     line-height: 1.5;
 }
 
+/* --- 進度條 (使用高飽和度色彩) --- */
+#progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+    margin-bottom: 30px;
+    overflow: hidden; /* 確保圓角效果 */
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%; 
+    background-color: #e91e63; /* 使用參考圖中的亮粉紅色 */
+    transition: width 0.3s ease-in-out;
+}
+
+/* --- 選項按鈕 (模擬卡片或方塊) --- */
+.option-button {
+    background-color: #ffe0b2; /* 淺橘色或米色背景 */
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a; /* 強烈邊框 */
+    padding: 15px 20px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.15s;
+    line-height: 1.4;
+}
+
+.option-button:hover {
+    background-color: #ffcc80; /* Hover 時變深 */
+    transform: translateY(-2px); /* 輕微上浮效果 */
+}
+
+/* --- 結果區塊 --- */
+#result-container {
+    margin-top: 40px;
+    padding: 40px 30px;
+    /* 這裡使用一個對比色，模擬結果卡片 */
+    background-color: #f5f3ef; /* 比容器背景稍深 */
+    border: 4px solid #c0392b; /* 使用深紅邊框 */
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px #c0392b; /* 強烈的陰影效果 */
+}
+
+#result-container h2 {
+    color: #c0392b; /* 深紅色標籤 */
+    font-size: 1.8em;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
 .disclaimer {
-    font-style: italic;
+    font-style: normal; /* 保持字型粗體 */
     color: #7f8c8d;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.big-result-label {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin: 15px 0 0px 0;
+}
+
+.final-result-text {
+    /* 核心結果文字，必須極大且醒目 */
+    font-size: 2.8em; 
+    font-weight: 900;
+    color: #e91e63; /* 亮粉紅色，極高對比 */
+    line-height: 1.2;
+    padding: 15px 10px;
+    /* 模擬結果圖中的獨立文字區塊 */
+    border: 2px dashed #e91e63; 
+    border-radius: 5px;
     margin-top: 10px;
 }
